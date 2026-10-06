@@ -149,7 +149,7 @@ stafftrack/
 
 1. **Клонировать репозиторий на локальную машину:**
    ```bash
-   https://github.com/RADiant-Git/StuffTrack.git
+   git clone https://github.com/RADiant-Git/StuffTrack.git
    cd StuffTrack
    ```
 
