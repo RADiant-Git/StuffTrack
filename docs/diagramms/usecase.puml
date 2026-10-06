@@ -1,0 +1,44 @@
+@startuml StaffTrack_UseCase
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Администратор" as Admin
+actor "Сотрудник" as Employee
+
+' Наследование
+Admin -up-|> Employee
+
+rectangle "Информационная система «StaffTrack»" {
+    usecase "Регистрация пользователей" as UC_Register
+    usecase "Добавление сотрудника" as UC_AddEmployee
+    usecase "Назначение на должность" as UC_AssignPosition
+    usecase "Редактирование данных сотрудника" as UC_EditEmployee
+    usecase "Удаление сотрудника" as UC_DeleteEmployee
+    usecase "Добавление должности" as UC_AddPosition
+    usecase "Редактирование должности" as UC_EditPosition
+    usecase "Удаление должности" as UC_DeletePosition
+
+    usecase "Вход в систему (авторизация)" as UC_Login
+    usecase "Просмотр списка сотрудников" as UC_ViewEmployees
+    usecase "Поиск сотрудника" as UC_SearchEmployee
+    usecase "Просмотр справочника должностей" as UC_ViewPositions
+}
+
+' Связи Администратора
+Admin -- UC_Register
+Admin -- UC_AddEmployee
+Admin -- UC_AssignPosition
+Admin -- UC_EditEmployee
+Admin -- UC_DeleteEmployee
+Admin -- UC_AddPosition
+Admin -- UC_EditPosition
+Admin -- UC_DeletePosition
+
+' Связи Сотрудника
+Employee -- UC_Login
+Employee -- UC_ViewEmployees
+Employee -- UC_SearchEmployee
+Employee -- UC_ViewPositions
+
+@enduml
