@@ -13,3 +13,8 @@ __pycache__/
 *.pyo
 venv/
 env/
+
+# БД и Диаграммы
+*.db
+*.bkp
+*.dtmp
