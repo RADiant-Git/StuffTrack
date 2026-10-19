@@ -1,0 +1,244 @@
+<mxfile host="Electron">
+  <diagram name="Страница-1" id="63kt_3wQfBpOVZxlWB6Y">
+    <mxGraphModel dx="1806" dy="1820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="1360" width="460" x="720" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="1480" width="460" x="220" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-18" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XcwSu-QhdXblLy2M8BW6-17" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-16" parent="1" style="html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start" value="Начало" vertex="1">
+          <mxGeometry height="80" width="160" x="260" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-23" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XcwSu-QhdXblLy2M8BW6-22" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-26" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XcwSu-QhdXblLy2M8BW6-25" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-17" parent="1" style="shape=rhombus;html=1;dashed=0;whiteSpace=wrap;perimeter=rhombusPerimeter;" value="Роль пользователя - &quot;Администратор&quot;?" vertex="1">
+          <mxGeometry height="160" width="160" x="260" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-50" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660.03" y="240" />
+              <mxPoint x="660.03" y="1360" />
+            </Array>
+            <mxPoint x="340" y="1360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-22" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;dashed=0;" value="Вывод:&lt;div&gt;ошибка доступа&lt;/div&gt;&lt;div&gt;&quot;Требуется&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;авторизация администратора&quot;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="440" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Нет" vertex="1">
+          <mxGeometry height="30" width="60" x="400" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-29" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XcwSu-QhdXblLy2M8BW6-28" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-25" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;dashed=0;" value="Ввод:&amp;nbsp;&lt;div&gt;данные сотрудника&lt;/div&gt;&lt;div&gt;(ФИО, телефон&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;),&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;должность&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="240" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Да" vertex="1">
+          <mxGeometry height="30" width="60" x="330" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-31" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XcwSu-QhdXblLy2M8BW6-30" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-28" parent="1" style="whiteSpace=wrap;html=1;dashed=0;" value="Валидация данных" vertex="1">
+          <mxGeometry height="80" width="160" x="260" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-36" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XcwSu-QhdXblLy2M8BW6-35" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-30" parent="1" style="shape=rhombus;html=1;dashed=0;whiteSpace=wrap;perimeter=rhombusPerimeter;" value="Данные корректны?" vertex="1">
+          <mxGeometry height="160" width="160" x="260" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-32" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XcwSu-QhdXblLy2M8BW6-33" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="680" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-52" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="680.2758620689656" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-33" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;dashed=0;" value="Вывод:&amp;nbsp;&lt;div&gt;ошибка&lt;/div&gt;&lt;div&gt;&quot;Некорректный формат&amp;nbsp;&lt;/div&gt;&lt;div&gt;данных&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="440" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-34" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Нет" vertex="1">
+          <mxGeometry height="30" width="60" x="400" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-38" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XcwSu-QhdXblLy2M8BW6-37" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-35" parent="1" style="whiteSpace=wrap;html=1;dashed=0;" value="Поиск должности в БД" vertex="1">
+          <mxGeometry height="80" width="160" x="260" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-43" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XcwSu-QhdXblLy2M8BW6-42" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-37" parent="1" style="shape=rhombus;html=1;dashed=0;whiteSpace=wrap;perimeter=rhombusPerimeter;" value="Должность найдена?" vertex="1">
+          <mxGeometry height="160" width="160" x="260" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-39" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XcwSu-QhdXblLy2M8BW6-40" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="1000" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-53" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="1000.2758620689656" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-40" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;dashed=0;" value="Вывод:&amp;nbsp;&lt;div&gt;ошибка&lt;/div&gt;&lt;div&gt;&quot;Указанная должность не существует&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="440" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-41" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Нет" vertex="1">
+          <mxGeometry height="30" width="60" x="400" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-47" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XcwSu-QhdXblLy2M8BW6-44" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-42" parent="1" style="whiteSpace=wrap;html=1;dashed=0;" value="Сохранение записи&lt;div&gt;сотрудника в БД&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="160" x="260" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-49" edge="1" parent="1" source="XcwSu-QhdXblLy2M8BW6-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XcwSu-QhdXblLy2M8BW6-48" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-44" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;dashed=0;" value="Вывод:&amp;nbsp;&lt;div&gt;подтверждение&amp;nbsp;&lt;/div&gt;&lt;div&gt;добавления сотрудника&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="240" y="1240" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-45" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Да" vertex="1">
+          <mxGeometry height="30" width="60" x="330" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-46" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Да" vertex="1">
+          <mxGeometry height="30" width="60" x="330" y="1090" as="geometry" />
+        </mxCell>
+        <mxCell id="XcwSu-QhdXblLy2M8BW6-48" parent="1" style="html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start" value="Конец" vertex="1">
+          <mxGeometry height="80" width="160" x="260" y="1400" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-73" edge="1" parent="1" source="QZCT6hwFkBoLPP_jdRD1-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="QZCT6hwFkBoLPP_jdRD1-77" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-74" parent="1" style="html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start" value="Начало" vertex="1">
+          <mxGeometry height="80" width="160" x="760" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-75" edge="1" parent="1" source="QZCT6hwFkBoLPP_jdRD1-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="QZCT6hwFkBoLPP_jdRD1-79" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-76" edge="1" parent="1" source="QZCT6hwFkBoLPP_jdRD1-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="QZCT6hwFkBoLPP_jdRD1-82" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-77" parent="1" style="shape=rhombus;html=1;dashed=0;whiteSpace=wrap;perimeter=rhombusPerimeter;" value="Роль пользователя - &quot;Администратор&quot;?" vertex="1">
+          <mxGeometry height="160" width="160" x="760" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-109" edge="1" parent="1" source="QZCT6hwFkBoLPP_jdRD1-79" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1160" y="240.06" />
+              <mxPoint x="1160" y="1240.06" />
+            </Array>
+            <mxPoint x="840" y="1240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-79" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;dashed=0;" value="Вывод:&lt;div&gt;ошибка доступа&lt;/div&gt;&lt;div&gt;&quot;Требуется&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;авторизация&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;администратора&quot;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="940" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-80" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Нет" vertex="1">
+          <mxGeometry height="30" width="60" x="900" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-81" edge="1" parent="1" source="QZCT6hwFkBoLPP_jdRD1-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="QZCT6hwFkBoLPP_jdRD1-85" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-82" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;dashed=0;" value="Ввод:&amp;nbsp;&lt;div&gt;данные сотрудника&lt;/div&gt;&lt;div&gt;(ФИО, телефон),&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;новая должность&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="740" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-83" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Да" vertex="1">
+          <mxGeometry height="30" width="60" x="830" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-84" edge="1" parent="1" source="QZCT6hwFkBoLPP_jdRD1-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="QZCT6hwFkBoLPP_jdRD1-87" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-85" parent="1" style="whiteSpace=wrap;html=1;dashed=0;" value="Поиск сотрудника и должности в БД" vertex="1">
+          <mxGeometry height="80" width="160" x="760" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-86" edge="1" parent="1" source="QZCT6hwFkBoLPP_jdRD1-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="840" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-87" parent="1" style="shape=rhombus;html=1;dashed=0;whiteSpace=wrap;perimeter=rhombusPerimeter;" value="Записи найдены?" vertex="1">
+          <mxGeometry height="160" width="160" x="760" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-88" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="QZCT6hwFkBoLPP_jdRD1-90" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="920" y="680" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-89" edge="1" parent="1" source="QZCT6hwFkBoLPP_jdRD1-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1160" y="680.2758620689656" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-90" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;dashed=0;" value="Вывод:&lt;div&gt;ошибка&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Сотрудник или должность&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;не найдены&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="940" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-91" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Нет" vertex="1">
+          <mxGeometry height="30" width="60" x="900" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-94" edge="1" parent="1" source="QZCT6hwFkBoLPP_jdRD1-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="QZCT6hwFkBoLPP_jdRD1-101" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-95" parent="1" style="shape=rhombus;html=1;dashed=0;whiteSpace=wrap;perimeter=rhombusPerimeter;" value="Должность отличается&lt;div&gt;от текущей?&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="160" x="760" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-96" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="QZCT6hwFkBoLPP_jdRD1-98" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="920" y="880" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-97" edge="1" parent="1" source="QZCT6hwFkBoLPP_jdRD1-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=classic;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1160" y="880.2758620689656" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-98" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;dashed=0;" value="Вывод:&lt;div&gt;предупреждение&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&quot;Сотрудник уже занимает&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;эту должность&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="940" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-99" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Нет" vertex="1">
+          <mxGeometry height="30" width="60" x="900" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-100" edge="1" parent="1" source="QZCT6hwFkBoLPP_jdRD1-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="QZCT6hwFkBoLPP_jdRD1-103" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-101" parent="1" style="whiteSpace=wrap;html=1;dashed=0;" value="Обновление записи сотрудника в БД" vertex="1">
+          <mxGeometry height="80" width="160" x="760" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-102" edge="1" parent="1" source="QZCT6hwFkBoLPP_jdRD1-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="QZCT6hwFkBoLPP_jdRD1-106" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-103" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;dashed=0;" value="Вывод:&lt;div&gt;подтверждение&lt;/div&gt;&lt;div&gt;перевода на должность&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="740" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-104" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Да" vertex="1">
+          <mxGeometry height="30" width="60" x="830" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-105" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Да" vertex="1">
+          <mxGeometry height="30" width="60" x="830" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="QZCT6hwFkBoLPP_jdRD1-106" parent="1" style="html=1;dashed=0;whiteSpace=wrap;shape=mxgraph.dfd.start" value="Конец" vertex="1">
+          <mxGeometry height="80" width="160" x="760" y="1280" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
