@@ -1,0 +1,4 @@
+from repositories.user_repository import UserRepository
+from repositories.position_repository import PositionRepository
+from repositories.employee_repository import EmployeeRepository
+from repositories.assignment_repository import AssignmentRepository

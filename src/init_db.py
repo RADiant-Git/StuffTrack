@@ -1,24 +1,23 @@
-import os
+from pathlib import Path
 import sqlite3
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_FILE = os.path.join(BASE_DIR, "stafftrack.db")
-SCHEMA_FILE = os.path.join(BASE_DIR, "schema.sql")
+BASE_DIR = Path(__file__).resolve().parent.parent
+DB_FILE = BASE_DIR / "data" / "stafftrack.db"
+SCHEMA_FILE = BASE_DIR / "data" / "schema.sql"
 
 def create_database():
-    print(f"📦 Создание базы данных: {DB_FILE}")
-    
-    with open(SCHEMA_FILE, "r", encoding="utf-8") as f:
-        sql_script = f.read()
+    if not SCHEMA_FILE.exists():
+        return
 
-    # Подключаемся и накатываем скрипт
+    sql_script = SCHEMA_FILE.read_text(encoding="utf-8")
+
     conn = sqlite3.connect(DB_FILE)
     try:
+        conn.execute("PRAGMA foreign_keys = ON;")
         conn.executescript(sql_script)
         conn.commit()
-        print("✅ Все таблицы успешно созданы и наполнены тестовыми данными!")
-    except Exception as e:
-        print(f"❌ Ошибка при инициализации базы данных: {e}")
+    except Exception:
+        pass
     finally:
         conn.close()
 
