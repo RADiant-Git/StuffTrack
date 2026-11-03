@@ -38,7 +38,7 @@ class Employee:
     department_id: int
     current_position_id: int
     user_id: int | None = None
-    
+
     department_name: str | None = None
     position_title: str | None = None
 
@@ -50,3 +50,5 @@ class Assignment:
     start_date: str
     end_date: str | None = None
     notes: str | None = None
+
+    position_title: str | None = None

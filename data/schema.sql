@@ -104,8 +104,8 @@ INSERT INTO departments (name, description) VALUES
 
 -- Пользователи
 INSERT INTO users (username, password_hash, is_active, role_id) VALUES
-('admin_varya', '$2b$12$e8AdminHashExampleValueString123', 1, 1),
-('dev_anatolii',   '$2b$12$e8UserHashExampleValueString456',  1, 2);
+('admin_varya', 'plain:admin123', 1, 1),
+('dev_anatolii', 'plain:dev123',   1, 2);
 
 -- Сотрудники
 INSERT INTO employees (full_name, phone, email, status, hire_date, department_id, current_position_id, user_id) VALUES
