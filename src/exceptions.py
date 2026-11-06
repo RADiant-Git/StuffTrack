@@ -8,14 +8,17 @@ class ErrorCode:
 
     # Validation
     VALIDATION_EMPTY          = "validation.empty"
+    VALIDATION_INVALID_NAME   = "validation.invalid_name"
     VALIDATION_INVALID_EMAIL  = "validation.invalid_email"
     VALIDATION_INVALID_PHONE  = "validation.invalid_phone"
     VALIDATION_POSITIVE_INT   = "validation.positive_int"
     VALIDATION_TOO_SHORT      = "validation.too_short"
+    VALIDATION_TOO_LONG       = "validation.too_long"
     VALIDATION_INVALID_STATUS = "validation.invalid_status"
 
     # Employee
     EMPLOYEE_NOT_FOUND        = "employee.not_found"
+    EMPLOYEE_EMAIL_EXISTS     = "employee.email_exists"
     EMPLOYEE_PHONE_EXISTS     = "employee.phone_exists"
     EMPLOYEE_FIRED            = "employee.fired"
 

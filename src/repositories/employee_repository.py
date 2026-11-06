@@ -43,7 +43,6 @@ class EmployeeRepository:
         """, (full_name, phone, email, EmployeeStatus.ACTIVE.value, department_id, current_position_id, user_id))
         conn.commit()
         last_id = cur.lastrowid
-        conn.close()
         return last_id
 
     @staticmethod
@@ -62,7 +61,23 @@ class EmployeeRepository:
             WHERE e.employee_id = ?
         """, (employee_id,))
         row = cur.fetchone()
-        conn.close()
+        return EmployeeRepository._map(row) if row else None
+
+    @staticmethod
+    def get_by_email(email: str) -> Optional[Employee]:
+        # Поиск по почте
+        conn = get_connection()
+        cur = conn.cursor()
+        cur.execute("""
+            SELECT e.employee_id, e.full_name, e.phone, e.email, e.status, e.hire_date,
+                e.department_id, e.current_position_id, e.user_id,
+                d.name, p.title
+            FROM Employees e
+            LEFT JOIN Departments d ON e.department_id = d.department_id
+            LEFT JOIN Positions p ON e.current_position_id = p.position_id
+            WHERE e.email = ?
+        """, (email,))
+        row = cur.fetchone()
         return EmployeeRepository._map(row) if row else None
 
     @staticmethod
@@ -80,7 +95,6 @@ class EmployeeRepository:
             WHERE e.phone = ?
         """, (phone,))
         row = cur.fetchone()
-        conn.close()
         return EmployeeRepository._map(row) if row else None
 
     @staticmethod
@@ -119,7 +133,6 @@ class EmployeeRepository:
         
         cur.execute(query, tuple(params))
         rows = cur.fetchall()
-        conn.close()
         return [EmployeeRepository._map(row) for row in rows]
 
     @staticmethod
@@ -134,7 +147,6 @@ class EmployeeRepository:
         """, (full_name, phone, email, employee_id))
         conn.commit()
         changes = cur.rowcount
-        conn.close()
         return changes > 0
 
     @staticmethod
@@ -149,7 +161,6 @@ class EmployeeRepository:
         """, (status, current_position_id, department_id, employee_id))
         conn.commit()
         changes = cur.rowcount
-        conn.close()
         return changes > 0
 
     @staticmethod
@@ -168,5 +179,4 @@ class EmployeeRepository:
             WHERE e.user_id = ?
         """, (user_id,))
         row = cur.fetchone()
-        conn.close()
         return EmployeeRepository._map(row) if row else None

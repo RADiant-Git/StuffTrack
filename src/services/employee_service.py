@@ -6,7 +6,13 @@ from repositories.position_repository import PositionRepository
 from repositories.assignment_repository import AssignmentRepository
 from exceptions import AppError, ErrorCode, FieldName
 from enums import EmployeeStatus
-from utils.validators import require_not_empty, require_email, require_phone
+from utils.validators import (
+    require_not_empty,
+    require_email,
+    require_phone,
+    require_name,
+    require_max_length,
+)
 
 VALID_STATUSES = frozenset(s.value for s in EmployeeStatus)
 
@@ -20,20 +26,25 @@ def register_employee(
     user_id: Optional[int] = None,
 ) -> int:
     # Регистрация сотрудника
-    full_name = require_not_empty(full_name, FieldName.FULL_NAME)
+    full_name = require_name(full_name, FieldName.FULL_NAME)
+    full_name = require_max_length(full_name, 100, FieldName.FULL_NAME)
+
     phone = require_phone(phone)
+
     email = require_email(email)
+    email = require_max_length(email, 100, FieldName.EMAIL)
 
     if not DepartmentRepository.get_by_id(department_id):
         raise AppError(ErrorCode.DEPARTMENT_NOT_FOUND)
     if not PositionRepository.get_by_id(position_id):
         raise AppError(ErrorCode.POSITION_NOT_FOUND)
 
-    # Дубликат по телефону
     if EmployeeRepository.get_by_phone(phone):
         raise AppError(ErrorCode.EMPLOYEE_PHONE_EXISTS)
+    if EmployeeRepository.get_by_email(email):
+        raise AppError(ErrorCode.EMPLOYEE_EMAIL_EXISTS)
 
-    return EmployeeRepository.create(
+    new_id = EmployeeRepository.create(
         full_name=full_name,
         phone=phone,
         email=email,
@@ -41,16 +52,28 @@ def register_employee(
         current_position_id=position_id,
         user_id=user_id,
     )
+    AssignmentRepository.create_assignment(new_id, position_id)
+    return new_id
 
 
 def update_personal(employee_id: int, full_name: str, phone: str, email: str) -> bool:
-    # Обновление личных данных
+    # Обновление данных
     if not EmployeeRepository.get_by_id(employee_id):
         raise AppError(ErrorCode.EMPLOYEE_NOT_FOUND)
 
-    full_name = require_not_empty(full_name, FieldName.FULL_NAME)
+    full_name = require_name(full_name, FieldName.FULL_NAME)
+    full_name = require_max_length(full_name, 100, FieldName.FULL_NAME)
     phone = require_phone(phone)
     email = require_email(email)
+    email = require_max_length(email, 100, FieldName.EMAIL)
+
+    existing_phone = EmployeeRepository.get_by_phone(phone)
+    if existing_phone and existing_phone.employee_id != employee_id:
+        raise AppError(ErrorCode.EMPLOYEE_PHONE_EXISTS)
+
+    existing_email = EmployeeRepository.get_by_email(email)
+    if existing_email and existing_email.employee_id != employee_id:
+        raise AppError(ErrorCode.EMPLOYEE_EMAIL_EXISTS)
 
     return EmployeeRepository.update_personal_data(employee_id, full_name, phone, email)
 
@@ -63,7 +86,6 @@ def fire_employee(employee_id: int) -> bool:
     if emp.status == EmployeeStatus.FIRED.value:
         raise AppError(ErrorCode.EMPLOYEE_FIRED)
 
-    # Закрываем текущее назначение
     AssignmentRepository.close_current_assignment(employee_id)
 
     return EmployeeRepository.update_career_data(
@@ -98,5 +120,5 @@ def get_employee(employee_id: int) -> Employee:
 
 
 def get_by_user(user_id: int) -> Optional[Employee]:
-    # Профиль по пользователю
+    # Поиск профиля
     return EmployeeRepository.get_by_user_id(user_id)

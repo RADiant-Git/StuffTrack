@@ -25,7 +25,6 @@ class PositionRepository:
         """, (title, base_salary, requirements))
         conn.commit()
         last_id = cur.lastrowid
-        conn.close()
         return last_id
 
     @staticmethod
@@ -39,7 +38,6 @@ class PositionRepository:
             WHERE position_id = ?
         """, (position_id,))
         row = cur.fetchone()
-        conn.close()
         return PositionRepository._map(row) if row else None
 
     @staticmethod
@@ -53,7 +51,6 @@ class PositionRepository:
             ORDER BY title ASC
         """)
         rows = cur.fetchall()
-        conn.close()
         return [PositionRepository._map(row) for row in rows]
 
     @staticmethod
@@ -95,7 +92,6 @@ class PositionRepository:
         cur.execute(sql_query, tuple(params))
         conn.commit()
         changes = cur.rowcount
-        conn.close()
         
         return changes > 0
 
@@ -113,4 +109,4 @@ class PositionRepository:
             changes = cur.rowcount
             return changes > 0
         finally:
-            conn.close()
+            pass

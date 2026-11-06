@@ -20,7 +20,6 @@ class RoleRepository:
         cur = conn.cursor()
         cur.execute("SELECT role_id, name, description FROM Roles ORDER BY name ASC")
         rows = cur.fetchall()
-        conn.close()
         return [RoleRepository._map(row) for row in rows]
 
     @staticmethod
@@ -30,5 +29,4 @@ class RoleRepository:
         cur = conn.cursor()
         cur.execute("SELECT role_id, name, description FROM Roles WHERE role_id = ?", (role_id,))
         row = cur.fetchone()
-        conn.close()
         return RoleRepository._map(row) if row else None

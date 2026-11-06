@@ -28,7 +28,8 @@ def input_optional(prompt: str) -> Optional[str]:
     return raw if raw else None
 
 
-def confirm() -> bool:
+def confirm(prompt: Optional[str] = None) -> bool:
     # Подтверждение действия
-    answer = input(common.CONFIRM_PROMPT).strip().lower()
+    msg = prompt if prompt is not None else common.CONFIRM_PROMPT
+    answer = input(msg).strip().lower()
     return answer in ("y", "yes", "д", "да", "1")

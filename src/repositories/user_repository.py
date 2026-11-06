@@ -26,7 +26,6 @@ class UserRepository:
         """, (username, password_hash, role_id))
         conn.commit()
         last_id = cur.lastrowid
-        conn.close()
         return last_id
 
     @staticmethod
@@ -36,7 +35,6 @@ class UserRepository:
         cur = conn.cursor()
         cur.execute("SELECT user_id, username, password_hash, is_active, role_id FROM Users WHERE username = ?", (username,))
         row = cur.fetchone()
-        conn.close()
         return UserRepository._map(row) if row else None
 
     @staticmethod
@@ -46,7 +44,6 @@ class UserRepository:
         cur = conn.cursor()
         cur.execute("SELECT user_id, username, password_hash, is_active, role_id FROM Users WHERE user_id = ?", (user_id,))
         row = cur.fetchone()
-        conn.close()
         return UserRepository._map(row) if row else None
 
     @staticmethod
@@ -57,7 +54,6 @@ class UserRepository:
         cur.execute("UPDATE Users SET is_active = ? WHERE user_id = ?", (is_active, user_id))
         conn.commit()
         changes = cur.rowcount
-        conn.close()
         return changes > 0
 
     @staticmethod
@@ -68,5 +64,4 @@ class UserRepository:
         cur.execute("UPDATE Users SET password_hash = ? WHERE user_id = ?", (new_password_hash, user_id))
         conn.commit()
         changes = cur.rowcount
-        conn.close()
         return changes > 0

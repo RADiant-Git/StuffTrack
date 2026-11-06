@@ -8,13 +8,16 @@ ERROR_MESSAGES = {
     ErrorCode.AUTH_PASSWORD_TOO_SHORT:      "Пароль должен быть не короче {min_length} символов",
 
     ErrorCode.VALIDATION_EMPTY:             "{field} не может быть пустым",
+    ErrorCode.VALIDATION_INVALID_NAME:      "{field} содержит недопустимые символы",
     ErrorCode.VALIDATION_INVALID_EMAIL:     "Некорректный email",
     ErrorCode.VALIDATION_INVALID_PHONE:     "Некорректный номер телефона",
     ErrorCode.VALIDATION_POSITIVE_INT:      "{field} должен быть положительным числом",
     ErrorCode.VALIDATION_TOO_SHORT:         "{field} должен быть не короче {min_length} символов",
-    ErrorCode.VALIDATION_INVALID_STATUS:              "Недопустимый статус",
+    ErrorCode.VALIDATION_TOO_LONG:          "{field} не может быть длиннее {max_length} символов",
+    ErrorCode.VALIDATION_INVALID_STATUS:    "Недопустимый статус",
 
     ErrorCode.EMPLOYEE_NOT_FOUND:           "Сотрудник не найден",
+    ErrorCode.EMPLOYEE_EMAIL_EXISTS:        "Сотрудник с таким email уже существует",
     ErrorCode.EMPLOYEE_PHONE_EXISTS:        "Сотрудник с таким телефоном уже существует",
     ErrorCode.EMPLOYEE_FIRED:               "Сотрудник уволен, операция невозможна",
 

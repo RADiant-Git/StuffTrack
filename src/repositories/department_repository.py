@@ -21,7 +21,6 @@ class DepartmentRepository:
         cur.execute("INSERT INTO Departments (name, description) VALUES (?, ?)", (name, description))
         conn.commit()
         last_id = cur.lastrowid
-        conn.close()
         return last_id
 
     @staticmethod
@@ -31,7 +30,6 @@ class DepartmentRepository:
         cur = conn.cursor()
         cur.execute("SELECT department_id, name, description FROM Departments ORDER BY name ASC")
         rows = cur.fetchall()
-        conn.close()
         return [DepartmentRepository._map(row) for row in rows]
 
     @staticmethod
@@ -41,7 +39,6 @@ class DepartmentRepository:
         cur = conn.cursor()
         cur.execute("SELECT department_id, name, description FROM Departments WHERE department_id = ?", (department_id,))
         row = cur.fetchone()
-        conn.close()
         return DepartmentRepository._map(row) if row else None
 
     @staticmethod
@@ -56,7 +53,6 @@ class DepartmentRepository:
         """, (name, description, department_id))
         conn.commit()
         changes = cur.rowcount
-        conn.close()
         return changes > 0
 
     @staticmethod
@@ -69,4 +65,4 @@ class DepartmentRepository:
             conn.commit()
             return cur.rowcount > 0
         finally:
-            conn.close()
+            pass

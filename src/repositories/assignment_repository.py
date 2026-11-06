@@ -28,7 +28,6 @@ class AssignmentRepository:
         """, (employee_id, position_id, notes))
         conn.commit()
         last_id = cur.lastrowid
-        conn.close()
         return last_id
 
     @staticmethod
@@ -55,7 +54,6 @@ class AssignmentRepository:
             
         conn.commit()
         changes = cur.rowcount
-        conn.close()
         return changes > 0
 
     @staticmethod
@@ -73,5 +71,4 @@ class AssignmentRepository:
             ORDER BY a.start_date DESC
         """, (employee_id,))
         rows = cur.fetchall()
-        conn.close()
         return [AssignmentRepository._map(row) for row in rows]
