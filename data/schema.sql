@@ -1,9 +1,6 @@
--- Включение строгого контроля внешних ключей в SQLite
 PRAGMA foreign_keys = ON;
 
--- ========================================================
--- 1. Удаление таблиц в обратном порядке связей
--- ========================================================
+-- Удаление таблиц
 DROP TABLE IF EXISTS assignments;
 DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS users;
@@ -11,11 +8,7 @@ DROP TABLE IF EXISTS roles;
 DROP TABLE IF EXISTS positions;
 DROP TABLE IF EXISTS departments;
 
--- ========================================================
--- 2. Таблицы-справочники (не зависят от других таблиц)
--- ========================================================
-
--- Должности
+-- Справочник должностей
 CREATE TABLE positions (
     position_id   INTEGER PRIMARY KEY AUTOINCREMENT,
     title         TEXT NOT NULL UNIQUE,
@@ -23,7 +16,7 @@ CREATE TABLE positions (
     requirements  TEXT
 );
 
--- Подразделения / Отделы
+-- Справочник отделов
 CREATE TABLE departments (
     department_id INTEGER PRIMARY KEY AUTOINCREMENT,
     name          TEXT NOT NULL UNIQUE,
@@ -37,11 +30,7 @@ CREATE TABLE roles (
     description   TEXT
 );
 
--- ========================================================
--- 3. Пользователи и Сотрудники
--- ========================================================
-
--- Учётные записи пользователей
+-- Учётные записи
 CREATE TABLE users (
     user_id       INTEGER PRIMARY KEY AUTOINCREMENT,
     username      TEXT NOT NULL UNIQUE,
@@ -56,64 +45,64 @@ CREATE TABLE employees (
     employee_id         INTEGER PRIMARY KEY AUTOINCREMENT,
     full_name           TEXT NOT NULL,
     phone               TEXT NOT NULL UNIQUE,
-    email               TEXT UNIQUE,
+    email               TEXT NOT NULL UNIQUE,
     status              TEXT NOT NULL DEFAULT 'активен' CHECK (status IN ('активен', 'в отпуске', 'уволен')),
-    hire_date           TEXT NOT NULL, -- В SQLite даты хранятся в формате YYYY-MM-DD (TEXT)
+    hire_date           TEXT NOT NULL DEFAULT (datetime('now')),
     department_id       INTEGER,
-    current_position_id INTEGER,
-    user_id             INTEGER UNIQUE, -- Ограничение UNIQUE обеспечивает связь 1:1
+    current_position_id INTEGER NOT NULL,
+    user_id             INTEGER UNIQUE,
     FOREIGN KEY (department_id) REFERENCES departments (department_id) ON DELETE SET NULL,
     FOREIGN KEY (current_position_id) REFERENCES positions (position_id) ON DELETE RESTRICT,
     FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE SET NULL
 );
 
--- ========================================================
--- 4. Журнал назначений и перемещений (Связь M:N)
--- ========================================================
-
+-- История назначений
 CREATE TABLE assignments (
     assignment_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    start_date    TEXT NOT NULL,
-    end_date      TEXT,          -- NULL, если должность занимает сейчас
-    notes         TEXT,
     employee_id   INTEGER NOT NULL,
     position_id   INTEGER NOT NULL,
+    start_date    TEXT NOT NULL DEFAULT (datetime('now')),
+    end_date      TEXT,
+    notes         TEXT,
     FOREIGN KEY (employee_id) REFERENCES employees (employee_id) ON DELETE CASCADE,
     FOREIGN KEY (position_id) REFERENCES positions (position_id) ON DELETE RESTRICT
 );
 
--- ========================================================
--- 5. Начальные тестовые данные (для выполнения п. 2.3 лабы)
--- ========================================================
+-- Индексы связей
+CREATE INDEX idx_users_role_id ON users (role_id);
+CREATE INDEX idx_employees_department_id ON employees (department_id);
+CREATE INDEX idx_employees_position_id ON employees (current_position_id);
+CREATE INDEX idx_assignments_employee_id ON assignments (employee_id);
+CREATE INDEX idx_assignments_position_id ON assignments (position_id);
 
--- Роли
-INSERT INTO roles (name, description) VALUES
-('Администратор', 'Полный доступ к редактированию штата и пользователей (RW)'),
-('Сотрудник', 'Просмотр контактов и справочника должностей (RO)');
+-- Начальные данные: роли
+INSERT INTO roles (role_id, name, description) VALUES
+(1, 'Администратор', 'Полный доступ к системе'),
+(2, 'Сотрудник', 'Просмотр контактов и справочников');
 
--- Должности
-INSERT INTO positions (title, base_salary, requirements) VALUES
-('Младший разработчик', 65000, 'Python, базовый SQL, Git'),
-('Ведущий разработчик', 160000, 'Опыт от 3 лет, архитектура БД, руководство командой'),
-('HR-менеджер', 55000, 'Кадровое делопроизводство, ТК РФ');
+-- Начальные данные: должности
+INSERT INTO positions (position_id, title, base_salary, requirements) VALUES
+(1, 'Младший разработчик', 65000, 'Python, базовый SQL, Git'),
+(2, 'Ведущий разработчик', 160000, 'Опыт от 3 лет, архитектура БД'),
+(3, 'HR-менеджер', 55000, 'Кадровое делопроизводство, ТК РФ');
 
--- Отделы
-INSERT INTO departments (name, description) VALUES
-('Отдел разработки', 'Создание и развитие IT-продуктов компании'),
-('Отдел кадров', 'Рекрутинг и ведение кадровой документации');
+-- Начальные данные: отделы
+INSERT INTO departments (department_id, name, description) VALUES
+(1, 'Отдел разработки', 'Разработка IT-продуктов компании'),
+(2, 'Отдел кадров', 'Подбор и оформление персонала');
 
--- Пользователи
-INSERT INTO users (username, password_hash, is_active, role_id) VALUES
-('admin_varya', 'plain:admin123', 1, 1),
-('dev_anatolii', 'plain:dev123',   1, 2);
+-- Начальные данные: пользователи
+INSERT INTO users (user_id, username, password_hash, is_active, role_id) VALUES
+(1, 'admin_varya', 'plain:admin123', 1, 1),
+(2, 'dev_anatolii', 'plain:dev123', 1, 2);
 
--- Сотрудники
-INSERT INTO employees (full_name, phone, email, status, hire_date, department_id, current_position_id, user_id) VALUES
-('Смирнова Елена Сергеевна', '+7-910-111-22-33', 'smirnova@company.local', 'активен', '2023-03-01 09:00:00', 2, 3, 1),
-('Иванов Алексей Павлович',  '+7-920-222-33-44', 'ivanov@company.local',   'активен', '2024-01-15 10:00:00', 1, 2, 2);
+-- Начальные данные: сотрудники
+INSERT INTO employees (employee_id, full_name, phone, email, status, hire_date, department_id, current_position_id, user_id) VALUES
+(1, 'Смирнова Елена Сергеевна', '79101112233', 'smirnova@company.local', 'активен', '2023-03-01 09:00:00', 2, 3, 1),
+(2, 'Иванов Алексей Павлович',  '79202223344', 'ivanov@company.local',   'активен', '2024-01-15 10:00:00', 1, 2, 2);
 
--- История назначений (M:N)
+-- Начальные данные: назначения
 INSERT INTO assignments (start_date, end_date, notes, employee_id, position_id) VALUES
-('2023-03-01', NULL, 'Приказ о приёме на должность HR-менеджера', 1, 3),
-('2024-01-15', '2024-06-01', 'Принят на должность Младшего разработчика', 2, 1),
-('2024-06-01', NULL, 'Успешное прохождение испытательного срока, перевод на должность Ведущего разработчика', 2, 2);
+('2023-03-01 09:00:00', NULL, 'Приказ о приёме на работу', 1, 3),
+('2024-01-15 10:00:00', '2024-06-01 10:00:00', 'Принят на должность', 2, 1),
+('2024-06-01 10:00:00', NULL, 'Перевод на должность ведущего разработчика', 2, 2);
